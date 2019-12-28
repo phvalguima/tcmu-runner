@@ -37,6 +37,21 @@ if [ y`uname`y = yLinuxy ]; then
 		# for ceph
 		$SUDO apt install -y librados2 librbd-dev
 		;;
+        ubuntu)
+                # Update APT cache
+                $SUDO apt update
+
+                # for generic
+                $SUDO apt install -y cmake make gcc libnl-3-dev libglib2.0-dev zlib1g kmod
+                $SUDO apt install -y libnl-3-dev libglib2.0-0 libkmod-dev libgoogle-perftools-dev libnl-genl-3-dev
+
+                # for glusterfs
+                $SUDO apt install -y libglusterfs-dev
+
+                # for ceph
+                $SUDO apt install -y librados2 librbd-dev
+                ;;
+
 	*)
 		echo "TODO: only fedora/rhel/centos/debian are supported for now!"
 		;;
